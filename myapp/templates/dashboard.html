@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>User Dashboard</title>
+    <link rel="icon" href="{% static 'images/icon.jpg' %}" type="image/icon">
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/icon.jpg' %}" alt="Your Logo" class="logo">
+        <h1>Bakari Mental Health Consultation</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'my_view' %}">Home</a></li>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'my_view' %}#faq">FAQ</a></li>
+                <li><a href="{% url 'my_view' %}#contact">Contact</a></li>
+                <li><a href="{% url 'schedule_appointment' %}">Schedule Appointment</a></li>
+                
+            </ul>
+            <div cla <a href="{% url 'schedule_appointment' %}" class="btn-schedule">Schedule an Appointment</a>s="auth-buttons">
+                <a href="{% url 'logout' %}" class="btn-sign-out">Sign Out</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Your Appointments</h2>
+             <a href="{% url 'schedule_appointment' %}" class="btn-schedule">Schedule an Appointment</a>
+            {% comment %} <a href="{% url 'schedule' %}" class="btn-schedule">Schedule an Appointment</a> {% endcomment %}
+            {% if appointments %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for appointment in appointments %}
+                            <tr>
+                                <td>{{ appointment.date }}</td>
+                                <td>{{ appointment.time }}</td>
+                                <td>{{ appointment.description }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>You have no scheduled appointments.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Bakari Mental Health Consultation</p>
+    </footer>
+</body>
+</html>
