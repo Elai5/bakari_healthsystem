@@ -39,7 +39,7 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return redirect('dashboard')  # Redirect to dashboard after login
+            return redirect('dashboard')
         else:
             return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
@@ -71,7 +71,7 @@ def register_view(request):
             return render(request, 'register.html', {'error': str(e)})
 
         auth_login(request, user)
-        return redirect('dashboard')  # Redirect to dashboard after successful registration
+        return redirect('dashboard')
 
     return render(request, 'register.html')
 
@@ -95,7 +95,7 @@ def schedule_appointment_view(request):
         appointment.save()
 
         messages.success(request, 'Your appointment has been scheduled successfully!')
-        return redirect('appointment_confirmation')  # Redirect to confirmation page
+        return redirect('appointment_confirmation')
 
     return render(request, 'schedule_appointment.html')
 
@@ -106,5 +106,30 @@ def appointment_confirmation_view(request):
 def dashboard_view(request):
     user = request.user
     appointments = Appointment.objects.filter(user=user)
-    # Show different content based on whether the user has appointments
     return render(request, 'dashboard.html', {'appointments': appointments})
+
+def quick_contact_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        if not name or not email or not message:
+            messages.error(request, 'All fields are required.')
+            return render(request, 'quick_contact.html')
+
+        try:
+            send_mail(
+                subject=f'Message from {name}',
+                message=message,
+                from_email=email,
+                recipient_list=['write the created email here.com'], 
+            )
+            messages.success(request, 'Your message has been sent successfully!')
+        except Exception as e:
+            messages.error(request, f'An error occurred: {str(e)}')
+
+        return redirect('dashboard')
+
+    return render(request, 'quick_contact.html')
+

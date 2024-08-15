@@ -12,5 +12,6 @@ urlpatterns = [
     path('schedule/', views.schedule_appointment_view, name='schedule_appointment'),
     path('appointment-confirmation/', views.appointment_confirmation_view, name='appointment_confirmation'),
     path('dashboard/', dashboard_view, name='dashboard'),
+    path('quick-contact/', views.quick_contact_view, name='quick_contact'),
 ]
 
