@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Appointment Confirmation</title>
+    <link rel="icon" href="{% static 'images/icon.jpg' %}" type="image/icon">
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/icon.jpg' %}" alt="Your Logo" class="logo">
+        <h1>Bakari Mental Health Consultation</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'my_view' %}">Home</a></li>
+                <li><a href="{% url 'my_view' %}">Home</a></li>
+        <li><a href="{% url 'my_view' %}#services">Services</a></li>
+        <li><a href="{% url 'my_view' %}#about">About</a></li>
+        <li><a href="{% url 'my_view' %}#faq">FAQ</a></li>
+        <li><a href="{% url 'my_view' %}#testimonials">Testimonials</a></li>
+        <li><a href="{% url 'my_view' %}#contact">Contact</a></li>
+                <!-- Other nav items -->
+            </ul>
+            <div class="auth-buttons">
+                <a href="{% url 'login' %}" class="btn-sign-in">Sign In</a>
+                <a href="{% url 'register' %}" class="btn-sign-up">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Appointment Scheduled</h1>
+        <p>Your appointment has been successfully scheduled. Thank you!</p>
+        <a href="{% url 'my_view' %}">Back to Home</a>
+    </main>
+
+    <footer>
+        <p>© 2024 Bakari Mental Health Consultation</p>
+    </footer>
+
+    <script src="{% static 'js/scripta.js' %}"></script>
+</body>
+</html>

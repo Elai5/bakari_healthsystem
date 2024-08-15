@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Register - Bakari Mental Health Consultation</title>
+    <link rel="icon" href="{% static 'images/icon.jpg' %}" type="image/icon">
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/icon.jpg' %}" alt="Your Logo" class="logo">
+        <h1>Bakari Mental Health Consultation</h1>
+        <nav>
+    <ul>
+        <li><a href="{% url 'my_view' %}">Home</a></li>
+        <li><a href="{% url 'my_view' %}#services">Services</a></li>
+        <li><a href="{% url 'my_view' %}#about">About</a></li>
+        <li><a href="{% url 'my_view' %}#faq">FAQ</a></li>
+        <li><a href="{% url 'my_view' %}#testimonials">Testimonials</a></li>
+        <li><a href="{% url 'my_view' %}#contact">Contact</a></li>
+    </ul>
+    <div class="auth-buttons">
+        <a href="{% url 'login' %}" class="btn-sign-in">Sign In</a>
+        <a href="{% url 'register' %}" class="btn-sign-up">Sign Up</a></div>
+</nav>
+
+
+    </header>
+    <form action="{% url 'register' %}" method="post" id="register-form">
+    {% csrf_token %}
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" required>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" required>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="password_confirm">Confirm Password:</label>
+    <input type="password" id="password_confirm" name="password_confirm" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone">
+
+    <label for="date_of_birth">Date of Birth:</label>
+    <input type="date" id="date_of_birth" name="date_of_birth">
+
+    <label>
+        <input type="checkbox" name="terms" required> I agree to the <a href="#">terms and conditions</a>.
+    </label>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    
+    <button type="submit">Register</button>
+</form>
+
+    <script src="{% static 'js/scripta.js' %}"></script>
+</body>
+</html>

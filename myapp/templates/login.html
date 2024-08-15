@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Login - Bakari Mental Health Consultation</title>
+    <link rel="icon" href="{% static 'images/icon.jpg' %}" type="image/icon">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{% static 'images/icon.jpg' %}" alt="Your Logo" class="logo">
+            <h1>Bakari Mental Health Consultation</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'my_view' %}">Home</a></li>
+                    <li><a href="{% url 'my_view' %}#services">Services</a></li>
+                    <li><a href="{% url 'my_view' %}#about">About</a></li>
+                    <li><a href="{% url 'my_view' %}#faq">FAQ</a></li>
+                    <li><a href="{% url 'my_view' %}#testimonials">Testimonials</a></li>
+                    <li><a href="{% url 'my_view' %}#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="{% url 'login' %}" class="btn-sign-in">Sign In</a>
+                <a href="{% url 'register' %}" class="btn-sign-up">Sign Up</a>
+            </div>
+        </div>
+    </header>
+    <form action="{% url 'login' %}" method="post" id="login-form">
+        {% csrf_token %}
+        <label for="username">Username/Email:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <button type="submit">Login</button>
+    </form>
+    <script src="{% static 'js/scripta.js' %}"></script>
+</body>
+</html>

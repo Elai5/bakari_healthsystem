@@ -1,0 +1,364 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+header {
+    background-color: #005f73;
+    color: white;
+    padding: 17px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* display: flex; */
+}
+
+header img.logo {
+    width: 100px;
+    height: auto;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #d00dac;
+}
+
+button,
+.btn-sign-in,
+.btn-sign-up {
+    background-color: #008CBA;
+    /* Primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    /* Rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effects */
+button:hover,
+.btn-sign-in:hover,
+.btn-sign-up:hover {
+    background-color: #005f73;
+    /* Darker color on hover */
+}
+
+/* Specific styles for sign-in and sign-up buttons */
+.btn-sign-in {
+    background-color: #4CAF50;
+    /* Green for sign-in */
+}
+
+.btn-sign-in:hover {
+    background-color: #45a049;
+    /* Darker green on hover */
+}
+
+.btn-sign-up {
+    background-color: #f44336;
+    /* Red for sign-up */
+}
+
+.btn-sign-up:hover {
+    background-color: #d32f2f;
+    /* Darker red on hover */
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #005f73;
+}
+
+/* Call-to-action button */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e30fb5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e1b1d8;
+}
+
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #005f73;
+    border-radius: 10px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 70%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 95, 115, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 95, 115, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .carousel-item img {
+        width: 90%;
+    }
+
+    .carousel-caption {
+        bottom: 10px;
+        left: 10px;
+        padding: 5px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 95, 115, 0.8);
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table,
+th,
+td {
+    border: 1px solid #005f73;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input,
+textarea,
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #005f73;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003f4f;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #005f73;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#back-to-top:hover {
+    background-color: #003f4f;
+}
+
+.appointment-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.appointment-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.appointment-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.appointment-form input,
+.appointment-form textarea,
+.appointment-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.appointment-form button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.appointment-form button:hover {
+    background-color: #003f50;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.messages li {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.messages .success {
+    color: #4CAF50;
+    border-color: #4CAF50;
+    background-color: #E8F5E9;
+}
+
+.messages .error {
+    color: #F44336;
+    border-color: #F44336;
+    background-color: #FFEBEE;
+}
+
+
+
+footer {
+    background-color: #005f73;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+blockquote {
+    background-color: #e0f7fa;
+    border-left: 5px solid #005f73;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+footer p {
+    margin: 0;
+}
