@@ -12,19 +12,17 @@
     <header>
         <img src="{% static 'images/icon.jpg' %}" alt="Your Logo" class="logo">
         <h1>Bakari Mental Health Consultation</h1>
-        <nav>
+           <nav>
             <ul>
                 <li><a href="{% url 'my_view' %}">Home</a></li>
-                <li><a href="{% url 'my_view' %}#services">Services</a></li>
-                <li><a href="{% url 'my_view' %}#about">About</a></li>
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
                 <li><a href="{% url 'my_view' %}#faq">FAQ</a></li>
-                <li><a href="{% url 'my_view' %}#testimonials">Testimonials</a></li>
                 <li><a href="{% url 'my_view' %}#contact">Contact</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <a href="{% url 'login' %}" class="btn-sign-in">Sign In</a>
-                <a href="{% url 'register' %}" class="btn-sign-up">Sign Up</a>
+                <li><a href="{% url 'schedule_appointment' %}">Schedule Appointment</a></li>
+                <a href="{% url 'logout' %}" class="btn-sign-out">Sign Out</a>
             </div>
+                
+            </ul>
         </nav>
     </header>
 
